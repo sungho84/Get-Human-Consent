@@ -6,90 +6,53 @@
 <title>ARGOS HITL - Human Verification System</title>
 <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/refs/heads/main/ARGOS_Horizontal%20Type.svg">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#0064FF',secondary:'#4B5563'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#0064FF',
+        secondary: '#4B5563'
+      },
+      borderRadius: {
+        none: '0px',
+        sm: '4px',
+        DEFAULT: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        full: '9999px',
+        button: '8px'
+      }
+    }
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Inter', sans-serif;
-}
-.gradient-bg {
-background: linear-gradient(135deg, rgba(0,100,255,0.1) 0%, rgba(0,100,255,0.05) 100%);
-}
-.timeline-connector {
-position: absolute;
-top: 50%;
-left: 100%;
-width: 100%;
-height: 2px;
-background-color: #E5E7EB;
-transform: translateY(-50%);
-z-index: -1;
-}
-.timeline-item:last-child .timeline-connector {
-display: none;
-}
-input:focus {
-outline: none;
-}
-.accordion-content {
-  display: none;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.accordion-item.active .accordion-content {
-  display: block;
-}
-
-.accordion-icon {
-transition: transform 0.3s ease;
-}
-.accordion-item.active .accordion-icon {
-transform: rotate(180deg);
-}
-.backdrop {
-background-color: rgba(0, 0, 0, 0.5);
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 40;
-display: none;
-}
-.modal {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 50;
-display: none;
-width: 90%;
-max-width: 600px;
-}
-.backdrop.active, .modal.active {
-display: block;
-}
+body { font-family: 'Inter', sans-serif; }
 </style>
 </head>
 <body class="bg-white text-gray-900">
-<!-- Navigation Bar -->
-<header class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-30 border-b border-gray-100 shadow-sm">
-  <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
-    <a href="/">
-      <img src="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/refs/heads/main/ARGOS_Horizontal%20Type.svg" 
-           alt="ARGOS Logo" class="h-8 sm:h-10 object-contain" />
-    </a>
-    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-      <a href="#" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-button text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">Log in</a>
-      <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-button text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">Contact us</a>
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-30 border-b border-gray-100 shadow-sm">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-wrap sm:flex-nowrap justify-between items-center">
+      <a href="/" class="w-full sm:w-auto flex justify-center sm:justify-start mb-2 sm:mb-0">
+        <img src="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/refs/heads/main/ARGOS_Horizontal%20Type.svg" 
+             alt="ARGOS Logo" class="h-8 sm:h-10 object-contain" />
+      </a>
+      <div class="w-full sm:w-auto flex justify-center sm:justify-end gap-2 sm:gap-4">
+        <a href="#" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-button text-sm sm:text-base whitespace-nowrap text-center">Log in</a>
+        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-button text-sm sm:text-base whitespace-nowrap text-center">Contact us</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
 <!-- Hero Section -->
 <section class="pt-32 pb-20 px-4 gradient-bg min-h-[90vh] flex items-center">
