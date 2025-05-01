@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | ARGOS HITL</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/main/ARGOS_Icon.png">
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0064FF',
-            secondary: '#4B5563'
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Human In The Loop</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0064FF",
+            },
           },
-          borderRadius: {
-            button: '8px'
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
-</head>
-<body class="bg-white text-gray-900">
-  <div id="header"></div>
-  <main class="pt-32 pb-20 px-4">
-    <div class="max-w-3xl mx-auto">
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12">
       <h1 class="text-3xl font-bold text-primary mb-6">Privacy Policy</h1>
+
       <p class="text-sm text-gray-500 mb-2"><strong>Effective Date:</strong> May 1, 2025</p>
       <p class="text-sm text-gray-500 mb-2"><strong>Last Updated:</strong> May 1, 2025</p>
       <p class="text-sm text-gray-500 mb-8"><strong>Provider:</strong> ARGOS Identity Inc. (USA)</p>
 
       <section class="mb-8">
         <h2 class="text-xl font-semibold text-primary mb-2">1. Overview</h2>
-        <p>ARGOS Identity Inc. ("we", "our", or "the Company") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, store, and disclose your personal information when you access or use the Humans in the Loop identity verification service (the "Service").</p>
+        <p>
+          ARGOS Identity Inc. ("we", "our", or "the Company") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, store, and disclose your personal information when you access or use the Humans in the Loop identity verification service (the "Service").
+        </p>
       </section>
 
       <section class="mb-8">
@@ -49,7 +44,6 @@
 
       <section class="mb-8">
         <h2 class="text-xl font-semibold text-primary mb-2">3. Methods of Collection</h2>
-        <p>We collect personal information via the following methods:</p>
         <ul class="list-disc pl-5 space-y-1">
           <li>Direct input from users during signup or identity verification</li>
           <li>Automatically through service interaction (cookies, logs, IPs)</li>
@@ -131,16 +125,5 @@
         <p>This Privacy Policy is governed by the laws of the State of California, USA. All disputes shall be resolved under the exclusive jurisdiction of the courts located in San Francisco County, California.</p>
       </section>
     </div>
-  </main>
-  <div id="footer"></div>
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('header').innerHTML = html });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('footer').innerHTML = html });
-  </script>
-</body>
+  </body>
 </html>
