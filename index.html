@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARGOS HITL - Human Verification System</title>
-<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/main/ARGOS_Icon.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/refs/heads/main/ARGOS_Horizontal%20Type.svg">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -30,10 +30,8 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
+
 <style>
 .backdrop {
   position: fixed;
@@ -248,18 +246,17 @@ Authentication result is sent to Agent and requested operation is performed only
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-      <!-- 1 -->
-      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-          <div class="w-6 h-6 flex items-center justify-center text-blue-600">
-            <i class="ri-user-check-line ri-lg"></i>
-          </div>
-        </div>
-        <h3 class="text-xl font-semibold mb-3">Explicit Human-in-the-Loop Approval</h3>
-        <p class="text-gray-600">
-          Every sensitive AI operation requires explicit human consent. No action proceeds without real user intent.
-        </p>
-      </div>
+<!-- 1 - Explicit Human-in-the-Loop Approval -->
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-user-line text-blue-600 text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-semibold mb-3">Explicit Human-in-the-Loop Approval</h3>
+  <p class="text-gray-600">
+    Every sensitive AI operation requires explicit human consent. No action proceeds without real user intent.
+  </p>
+</div>
+
 
       <!-- 2 -->
       <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -409,7 +406,8 @@ Yes, ARGOS HITL supports authentication through various channels besides email i
 </div>
 </div>
 </section>
-<!-- CTA Section -->
+
+  <!-- CTA Section -->
 <section class="py-20 px-4 bg-primary text-white">
 <div class="container mx-auto text-center">
 <h2 class="text-3xl font-bold mb-6">Implement HITL Now</h2>
@@ -427,8 +425,6 @@ Contact Us
 </div>
 </div>
 </section>
-
-
 <!-- Footer -->
 <footer class="py-12 px-4 bg-gray-900 text-gray-400">
   <div class="container mx-auto max-w-7xl">
@@ -492,7 +488,6 @@ Contact Us
     </div>
   </div>
 </footer>
-
 
 
 <!-- Demo Modal -->
