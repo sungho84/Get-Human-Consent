@@ -57,13 +57,22 @@ tailwind.config = {
   background-color: white;
   border-radius: 16px;
 }
-  
 .accordion-content {
   display: none;
 }
 .accordion-item.active .accordion-content {
   display: block;
 }
+  
+.accordion-icon i {
+  transform: rotate(-180deg); /* 기본: 위쪽 */
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon i {
+  transform: rotate(0deg); /* 펼침: 아래쪽 */
+}
+
 
 
 .backdrop.active,
