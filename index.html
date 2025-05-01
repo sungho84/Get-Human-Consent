@@ -57,6 +57,14 @@ tailwind.config = {
   background-color: white;
   border-radius: 16px;
 }
+  
+.accordion-content {
+  display: none;
+}
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
 
 .backdrop.active,
 .modal.active {
