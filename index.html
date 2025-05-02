@@ -12,16 +12,11 @@
     color: #0064FF;
     animation: blink 1s step-end infinite;
   }
-
   @keyframes blink {
     50% { opacity: 0; }
   }
-
-  @keyframes fade-out {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
   </style>
+
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -192,9 +187,8 @@
     data-aos-delay="0"
     data-aos-duration="600"
   >
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center">
-      <span id="typing-text" class="text-primary break-words"></span>
-      <span class="typing-cursor">|</span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center text-primary">
+      Human in the loop before AI takes <span id="dynamic-part" class="inline-block break-words"></span><span class="typing-cursor">|</span>
     </h1>
     <p class="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
       ARGOS HITL requires explicit human approval for sensitive operations<br class="hidden md:block"> executed by AI Agents, ensuring security and control.
@@ -767,27 +761,45 @@ addEventListener('click', () => {
     });
   </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const text = "Human in the loop before AI takes sensitive actions";
-  const target = document.getElementById("typing-text");
-  const cursor = document.querySelector(".typing-cursor");
-  let index = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+      const phrases = [
+        "fund transfers",
+        "account deletion",
+        "password reset",
+        "admin privilege change",
+        "user data export",
+        "payment authorization"
+      ];
+      const target = document.getElementById("dynamic-part");
+      let index = 0;
+      let charIndex = 0;
+      let typing = true;
 
-  function type() {
-    if (index < text.length) {
-      target.textContent += text[index];
-      index++;
-    } else {
-      clearInterval(typing);
-      cursor.style.animation = "fade-out 2s ease forwards"; // 깜빡임 종료 → 서서히 사라짐
-    }
-  }
+      function typeLoop() {
+        const phrase = phrases[index];
 
-  const typing = setInterval(type, 100);
-});
-</script>
+        if (typing) {
+          if (charIndex < phrase.length) {
+            target.textContent += phrase.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLoop, 100); // typing speed
+          } else {
+            typing = false;
+            setTimeout(typeLoop, 1500); // wait before erase
+          }
+        } else {
+          // instantly clear
+          target.textContent = "";
+          typing = true;
+          charIndex = 0;
+          index = (index + 1) % phrases.length;
+          setTimeout(typeLoop, 300);
+        }
+      }
 
-
+      typeLoop();
+    });
+  </script>
 
 </body>
 </html>
