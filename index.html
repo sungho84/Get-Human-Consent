@@ -1,84 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARGOS - Human In The Loop</title>
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/main/ARGOS_Icon.png">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#0064FF',
-        secondary: '#4B5563'
-      },
-      borderRadius: {
-        none: '0px',
-        sm: '4px',
-        DEFAULT: '8px',
-        md: '12px',
-        lg: '16px',
-        xl: '20px',
-        '2xl': '24px',
-        '3xl': '32px',
-        full: '9999px',
-        button: '8px'
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARGOS - Human In The Loop</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sungho84/Human_in_the_loop/main/ARGOS_Icon.png" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0064FF',
+            secondary: '#4B5563'
+          },
+          borderRadius: {
+            none: '0px',
+            sm: '4px',
+            DEFAULT: '8px',
+            md: '12px',
+            lg: '16px',
+            xl: '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            full: '9999px',
+            button: '8px'
+          }
+        }
       }
     }
-  }
-}
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
+  </script>
+  <style>
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 40;
+      display: none;
+    }
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      display: none;
+      background-color: white;
+      border-radius: 16px;
+    }
+    .accordion-content {
+      display: none;
+    }
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+    .accordion-icon i {
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.active .accordion-icon i {
+      transform: rotate(0deg);
+    }
+    .backdrop.active,
+    .modal.active {
+      display: block;
+    }
+  </style>
+</head>
 
-<style>
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 40;
-  display: none;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 50;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;       /* 화면 높이의 80%로 제한 */
-  overflow-y: auto;        /* 내용이 넘치면 스크롤 */
-  display: none;
-  background-color: white;
-  border-radius: 16px;
-}
-.accordion-content {
-  display: none;
-}
-.accordion-item.active .accordion-content {
-  display: block;
-}
-  
-.accordion-icon i {
-  transform: rotate(-180deg); /* 기본: 위쪽 */
-  transition: transform 0.3s ease;
-}
-
-.accordion-item.active .accordion-icon i {
-  transform: rotate(0deg); /* 펼침: 아래쪽 */
-}
-
-
-
-.backdrop.active,
-.modal.active {
-  display: block;
-}
-</style>
-
+<body>
 <header class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-30 border-b border-gray-100 shadow-sm">
   <div class="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
 
@@ -116,7 +112,7 @@ tailwind.config = {
         href="/signup" 
         class="bg-primary hover:bg-blue-700 text-white px-5 py-2 rounded-button text-sm font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
-        Get started
+        Try ARGOS for free
       </a>
       <a 
         href="#" 
@@ -166,7 +162,6 @@ tailwind.config = {
 
 <!-- Remixicon for icons -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
-
 
 
 <!-- Hero Section -->
@@ -412,8 +407,8 @@ Authentication result is sent to Agent and requested operation is performed only
       <!-- Open Source Plan -->
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-8 pt-12 hover:shadow-md transition-shadow flex flex-col items-center text-center">
         <h3 class="text-xl font-semibold text-primary mb-2">Open Source</h3>
-        <p class="text-gray-600 mb-4">For solo developers</p>
-        <p class="text-3xl font-bold mb-6">No sign up</p>
+        <p class="text-gray-600 mb-4">No sign up</p>
+        <p class="text-3xl font-bold mb-6">Free</p>
         <ul class="text-sm text-gray-600 space-y-2 mb-6 text-left">
           <li>✅ SDK, API suported</li>
           <li>✅ HITL auth supported</li>
@@ -423,7 +418,7 @@ Authentication result is sent to Agent and requested operation is performed only
   <div class='group inline-block relative ml-1'>
     <i class='ri-information-line text-gray-400 text-base align-middle'></i>
     <div class='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 px-3 py-2 rounded-lg text-xs text-white bg-gray-800 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10'>
-      Each MCP server can connect to only one contact. Contact owners can unbind it from the dashboard.
+      Each MCP server can only connect to one contact. conatct owners can unbind in the dashboard.
     </div>
   </div>
 </li>
@@ -442,7 +437,7 @@ Authentication result is sent to Agent and requested operation is performed only
         <p class="text-gray-600 mb-4">For small teams</p>
         <p class="text-3xl font-bold mb-6">Free</p>
         <ul class="text-sm text-gray-600 space-y-2 mb-6 text-left">
-          <li class="text-gray-500 italic">All Open Source features included</li>
+          <li class="text-gray-500 italic">Includes all Open Source features</li>
           <li>✅ Bot Token provided</li>
           <li>✅ 5 MAU included <div class='group inline-block relative ml-1'>
   <i class='ri-information-line text-gray-400 text-base align-middle'></i>
@@ -460,7 +455,7 @@ Authentication result is sent to Agent and requested operation is performed only
       <!-- Enterprise Plan -->
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-8 pt-12 hover:shadow-md transition-shadow flex flex-col items-center text-center">
         <h3 class="text-xl font-semibold text-primary mb-2">Enterprise</h3>
-        <p class="text-gray-600 mb-4">Tailored for scale</p>
+        <p class="text-gray-600 mb-4">Custom at scale</p>
         <p class="text-3xl font-bold mb-6">Contact Us</p>
         <ul class="text-sm text-gray-600 space-y-2 mb-6 text-left">
           <li>✅ Unlimited usage</li>
@@ -755,6 +750,14 @@ addEventListener('click', () => {
 });
 });
 </script>
-  
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 600,
+      easing: 'ease-out-quart'
+    });
+  </script>
 </body>
 </html>
