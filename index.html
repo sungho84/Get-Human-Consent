@@ -196,12 +196,15 @@
     data-aos-delay="0"
     data-aos-duration="600"
   >
-  <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center text-gray-700">
-    Human in the loop before AI takes
-    <span id="dynamic-part" class="inline-block break-words text-sky-400 font-semibold"></span>
-    <span class="typing-cursor">|</span>
-  </h1>
-
+<style>
+  .hero-heading {
+    line-height: 1.2; /* 또는 1.8 정도 */
+    word-break: break-word;
+  }
+</style>
+<h1 class="hero-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center text-slate-600">
+  Human in the loop before AI takes <span id="dynamic-part" class="inline-block text-rose-500 font-semibold"></span><span class="typing-cursor">|</span>
+</h1>
 
     <p class="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
       ARGOS HITL requires explicit human approval for sensitive operations<br class="hidden md:block"> executed by AI Agents, ensuring security and control.
