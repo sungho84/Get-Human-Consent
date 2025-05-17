@@ -135,23 +135,30 @@
   <!-- Mobile Navigation -->
   <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
     <nav class="flex flex-col gap-2 text-sm mt-2 border-t pt-4">
-      <a href="/blog" class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
+      <a href="/blog" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'Blog Link' })" 
+        class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
         <i class="ri-article-line text-base"></i> Blog
       </a>
-      <a href="#pricing" class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
+      <a href="#pricing" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'Pricing' })" 
+        class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
         <i class="ri-price-tag-3-line text-base"></i> Plan
       </a>
-      <a href="https://github.com/sungho84/get-human-consent" target="_blank" class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
+      <a href="https://github.com/sungho84/get-human-consent" target="_blank" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'github Link' })"
+        class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
         <i class="ri-github-line text-base"></i> GitHub
       </a>
-      <a href="https://www.npmjs.com/package/@argos/hitl" target="_blank" class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
+      <a href="https://www.npmjs.com/package/@argos/hitl" target="_blank" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'npm Link' })" 
+        class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
         <i class="ri-npmjs-line text-base"></i> NPM
       </a>
-      <a href="https://tally.so/r/wg946l" target="_blank" class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
+      <a href="https://tally.so/r/wg946l" target="_blank" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'contact us' })" 
+        class="flex items-center gap-1 text-gray-700 hover:text-primary px-3 py-2 rounded-button transition">
         <i class="ri-mail-line text-base"></i> Contact Us
       </a>
-      <a href="/signup" class="bg-primary text-white px-4 py-2 rounded-button text-sm mt-2">Get started</a>
-      <a href="#" class="bg-gray-100 text-gray-800 px-4 py-2 rounded-button text-sm">Log in</a>
+      <a href="/signup" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'signup' })" 
+        class="bg-primary text-white px-4 py-2 rounded-button text-sm mt-2">Get started</a>
+      <a href="#" onclick="gtag('event', 'click', { 'event_category': 'Mobile Nav', 'event_label': 'Log in' })"
+        class="bg-gray-100 text-gray-800 px-4 py-2 rounded-button text-sm">Log in</a>
     </nav>
   </div>
 </header>
@@ -822,6 +829,23 @@ addEventListener('click', () => {
     }
 
     startTypingCycle();
+  });
+</script>
+<script>
+  let hasScrolledToBottom = false;
+  window.addEventListener('scroll', () => {
+    if (hasScrolledToBottom) return;
+
+    const scrollY = window.scrollY + window.innerHeight;
+    const fullHeight = document.documentElement.scrollHeight;
+
+    if (scrollY >= fullHeight - 100) {
+      gtag('event', 'scroll_bottom', {
+        event_category: 'Engagement',
+        event_label: 'Reached Page Bottom'
+      });
+      hasScrolledToBottom = true;
+    }
   });
 </script>
 
